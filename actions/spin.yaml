@@ -1,0 +1,23 @@
+---
+description: >
+  Spins the patching roulette wheel, randomizing who gets what assignment.
+  If there are more members than assignments, some members get a "bye".
+  If there are fewer members than assignments, some members get >1 assignment.
+enabled: true
+runner_type: python-script
+entry_point: spin.py
+name: spin
+pack: patching_roulette
+parameters:
+  members:
+    type: array
+    items:
+      type: string
+    description: "List team members"
+    default: "{{ config_context.members }}"
+  assignments:
+    type: array
+    items:
+      type: string
+    description: "List of patching assignments"
+    default: "{{ config_context.assignments }}"

@@ -1,0 +1,13 @@
+---
+name: "spin"
+action_ref: "patching_roulette.spin"
+pack: "patching_roulette"
+description: "Spins the patching roulette wheel to randomize patching assignments for team members."
+formats:
+    - "patching roulette spin"
+ack:
+    format: "You cannot beat a roulette table unless you steal money from it. - Albert Einstein"
+result:
+    format: |
+        Here are you patching assignments:
+        {{ execution.result.result | to_yaml_string }}

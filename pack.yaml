@@ -1,0 +1,11 @@
+---
+ref: patching_roulette
+name: patching_roulette
+description: StackStorm pack to gamble on a team's patching rotation.
+keywords: 
+    - patching
+    - roulette
+    - fun
+version: 0.1.0
+author: Encore Technologies
+email: code@encore.tech

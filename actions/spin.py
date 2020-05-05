@@ -13,7 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from st2common.runners.base_action import Action
-from datetime import datetime
+import datetime
+import json
 import random
 
 
@@ -42,7 +43,7 @@ class Spin(Action):
         results = sorted(results, key=lambda r: r['member'])
 
         data = {
-            'date': datetime.now().isoformat(),
+            'date': datetime.datetime.now().isoformat(),
             'results': results,
         }
 

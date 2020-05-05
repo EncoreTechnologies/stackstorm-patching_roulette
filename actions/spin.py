@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from st2common.runners.base_action import Action
+from datetime import datetime
 import random
 
 
@@ -38,4 +39,13 @@ class Spin(Action):
                             'assignment': assignment})
 
         # sort results by member
-        return sorted(results, key=lambda r: r['member'])
+        results = sorted(results, key=lambda r: r['member'])
+
+        data = {
+            'date': datetime.now().isoformat(),
+            'results': results,
+        }
+
+        # Add a results to the datastore
+        self.action_service.set_value(name='patching_roulette.results', value=json.dumps(data))
+        return data

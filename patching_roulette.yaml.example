@@ -1,0 +1,9 @@
+---
+members:
+  - nick
+  - dave
+  - john
+
+assignments:
+  - dev
+  - prod

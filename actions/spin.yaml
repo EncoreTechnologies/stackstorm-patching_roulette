@@ -14,10 +14,8 @@ parameters:
     items:
       type: string
     description: "List team members"
-    default: "{{ config_context.members }}"
   assignments:
     type: array
     items:
       type: string
     description: "List of patching assignments"
-    default: "{{ config_context.assignments }}"

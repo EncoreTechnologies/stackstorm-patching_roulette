@@ -23,6 +23,10 @@ class Spin(Action):
         super(Spin, self).__init__(config)
 
     def run(self, members, assignments):
+        if not members:
+            members = self.config['members']
+        if not assignments:
+            assignments = self.config['assignments']
         random.shuffle(members)
         random.shuffle(assignments)
 
@@ -48,5 +52,7 @@ class Spin(Action):
         }
 
         # Add a results to the datastore
-        self.action_service.set_value(name='patching_roulette.results', value=json.dumps(data))
+        self.action_service.set_value(name='patching_roulette.results',
+                                      value=json.dumps(data),
+                                      local=False)
         return data

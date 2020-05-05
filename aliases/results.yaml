@@ -1,6 +1,6 @@
 ---
 name: "results"
-action_ref: "st2.kv_get_object"
+action_ref: "st2.kv.get_object"
 pack: "patching_roulette"
 description: "Gets the current patching roulette results"
 formats:
@@ -12,4 +12,6 @@ ack:
 result:
     format: |
         Here are the current patching assignments:
+        ```
         {{ execution.result.result | to_yaml_string }}
+        ```

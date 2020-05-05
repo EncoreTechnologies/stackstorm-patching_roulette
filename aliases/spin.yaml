@@ -10,4 +10,6 @@ ack:
 result:
     format: |
         Here are you patching assignments:
+        ```
         {{ execution.result.result | to_yaml_string }}
+        ```

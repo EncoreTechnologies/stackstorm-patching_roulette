@@ -1,0 +1,17 @@
+---
+name: "results"
+action_ref: "st2.kv.get_object"
+pack: "patching_roulette"
+description: "Gets the current patching roulette results"
+formats:
+    - "patching roulette results"
+immutable_parameters:
+  key: 'patching_roulette.results'
+ack:
+    format: "Digging deep to determine how terrible your luck is..."
+result:
+    format: |
+        Here are the current patching assignments:
+        ```
+        {{ execution.result.result | to_yaml_string }}
+        ```

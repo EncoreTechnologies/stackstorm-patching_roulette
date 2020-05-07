@@ -1,1 +1,11 @@
 ---
+members:
+  type: array
+  items:
+    type: string
+  description: "List team members"
+assignments:
+  type: array
+  items:
+    type: string
+  description: "List of patching assignments"

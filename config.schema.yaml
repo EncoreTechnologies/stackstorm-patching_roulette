@@ -11,6 +11,6 @@ assignments:
   description: "List of patching assignments"
 pins:
   type: object
-  description: "Used to pin a member(s) to an assignment. e.g. {member: assignment}"
+  description: "Used to pin a member(s) to an assignment. e.g. {'member': 'assignment'}"
   required: false
   additionalProperties: true

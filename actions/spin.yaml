@@ -19,3 +19,7 @@ parameters:
     items:
       type: string
     description: "List of patching assignments"
+  pins:
+    type: object
+    required: false
+    description: "Used to pin a member(s) to an assignment. e.g. {'member': 'assignment'}"

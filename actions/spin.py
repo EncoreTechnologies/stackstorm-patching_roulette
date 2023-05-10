@@ -22,15 +22,27 @@ class Spin(Action):
     def __init__(self, config):
         super(Spin, self).__init__(config)
 
-    def run(self, members, assignments):
+    def run(self, members, assignments, pins):
         if not members:
             members = self.config['members']
         if not assignments:
             assignments = self.config['assignments']
+        if not pins:
+            pins = self.config['pins']
+
+        results = []
+        for k, v in pins.items():
+            if k in members and v in assignments:
+                results.append({'member': k,
+                                'assignment': v})
+                members.remove(k)
+                assignments.remove(v)
+            else:
+                print("ERROR: member: {} or assignment: {} not found!".format(k, v))
+
         random.shuffle(members)
         random.shuffle(assignments)
 
-        results = []
         len_members = len(members)
         len_assignments = len(assignments)
         len_max = max(len_members, len_assignments)
